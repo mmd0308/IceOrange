@@ -7,12 +7,31 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="icemgr-common-provider" />
-        <module name="icemgr-core" />
-        <module name="icemgr-system" />
-        <module name="icemgr-explorer" />
-        <module name="icemgr-common" />
+        <module name="icemgr-system-provider" />
+        <module name="icemgr-gateway" />
+        <module name="icemgr-system-api" />
+        <module name="icemgr-common-core" />
         <module name="icemgr-rest" />
+        <module name="icemgr-common-rest" />
+        <module name="icemgr-common-api" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ice-orange-manager" target="11" />
+      <module name="icemgr-core" target="11" />
+      <module name="icemgr-explorer" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="icemgr-common-api" options="-parameters" />
+      <module name="icemgr-common-core" options="-parameters" />
+      <module name="icemgr-common-provider" options="-parameters" />
+      <module name="icemgr-common-rest" options="-parameters" />
+      <module name="icemgr-gateway" options="-parameters" />
+      <module name="icemgr-rest" options="-parameters" />
+      <module name="icemgr-system-api" options="-parameters" />
+      <module name="icemgr-system-provider" options="-parameters" />
+    </option>
   </component>
 </project>

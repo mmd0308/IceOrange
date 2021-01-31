@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/icemgr-common-provider/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-common/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-core/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-explorer/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-explorer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-common/icemgr-common-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-common/icemgr-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-common/icemgr-common-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-common/icemgr-common-rest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/icemgr-rest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/icemgr-rest/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-system/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/icemgr-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-system/icemgr-system-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-system/icemgr-system-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/icemgr-system/icemgr-system-provider/src/main/resources" charset="UTF-8" />
   </component>
 </project>

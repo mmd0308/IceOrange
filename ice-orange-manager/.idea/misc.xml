@@ -5,7 +5,21 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-dependencies/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-common/icemgr-common-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-common/icemgr-common-core/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-system/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-common/icemgr-common-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-common/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/icemgr-core/pom.xml" />
+        <option value="$PROJECT_DIR$/icemgr-explorer/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">

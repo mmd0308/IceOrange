@@ -1,0 +1,6 @@
+com/hzqing/common/provider/service/BaseService.class
+com/hzqing/common/provider/dal/entity/BaseEntity.class
+com/hzqing/common/provider/service/impl/BaseServiceImpl.class
+com/hzqing/common/provider/enums/ReturnCodeEnums.class
+com/hzqing/common/provider/response/AbstractResponse.class
+com/hzqing/common/provider/response/CommonResponse.class

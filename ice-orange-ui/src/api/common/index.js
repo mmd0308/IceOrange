@@ -13,8 +13,7 @@ export function list(path, params) {
 export function page(path, params) {
   return request({
     url: path + '/page/' + params.pageNum + '/' + params.pageSize,
-    method: 'get',
-    params: params
+    method: 'get'
   })
 }
 

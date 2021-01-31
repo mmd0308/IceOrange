@@ -2,9 +2,9 @@ import request from '@/utils/request'
 
 
 
-export function page(params) {
+export function list(params) {
   return request({
-    url: '/api/system/v1/users/page/' + params.pageNum + '/' + params.pageSize,
+    url: '/api/system/v1/users',
     method: 'get',
     params: params
   })

@@ -48,7 +48,7 @@
 
 <script>
   import UserForm from './form/index'
-  import { page } from '@/api/users/index'
+  import { list } from '@/api/users/index'
   import { deleteById } from '@/api/common/index'
 
   export default {
@@ -75,7 +75,7 @@
     methods: {
       handlePage() {
         this.tableLoading = true
-        page(this.pageQuery).then(res => {
+        list(this.pageQuery).then(res => {
           this.tableData = res.records
           this.total = res.total
           this.tableLoading = false
