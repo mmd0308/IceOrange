@@ -102,60 +102,48 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/nested',
+    path: '/apis',
     component: Layout,
-    redirect: '/nested/menu1',
-    name: 'Nested',
     meta: {
-      title: 'Nested',
+      title: 'API 管理',
       icon: 'nested'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
-        children: [
-          {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
-          },
-          {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
-          }
-        ]
+        path: 'index',
+        name: 'Project',
+        component: () => import('@/views/explorer/apis/design/index'),
+        meta: { title: 'API 设计', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/system',
+    component: Layout,
+    redirect: '/nested/menu1',
+    name: 'SYSTEM',
+    meta: {
+      title: '系统管理',
+      icon: 'nested'
+    },
+    children: [
+      {
+        path: 'users',
+        component: () => import('@/views/system/users/index'),
+        name: 'USERS',
+        meta: { title: '用户管理' }
       },
       {
-        path: 'menu2',
-        component: () => import('@/views/nested/menu2/index'),
-        name: 'Menu2',
-        meta: { title: 'menu2' }
+        path: 'users_groups',
+        component: () => import('@/views/system/users_groups/index'),
+        name: 'USERS_GROUPS',
+        meta: { title: '用户组' }
+      },
+      {
+        path: 'roles',
+        component: () => import('@/views/system/roles/index'),
+        name: 'ROLES',
+        meta: { title: '角色管理' }
       }
     ]
   },

@@ -1,0 +1,15 @@
+.el-drawer__body{
+  padding: 20px;
+}
+
+.ice-drawer__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.ice-drawer__content form{
+  flex: 1;
+}
+.ice-drawer__footer{
+  display: flex;
+}
