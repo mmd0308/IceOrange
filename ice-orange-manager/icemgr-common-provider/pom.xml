@@ -11,9 +11,9 @@
   </parent>
 
   <groupId>com.hzqing</groupId>
-  <artifactId>icemgr-common-service</artifactId>
+  <artifactId>icemgr-common-provider</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>icemgr-common-service</name>
+  <name>icemgr-common-provider</name>
 
 
   <dependencies>

@@ -1,6 +1,5 @@
-package com.hzqing.common.provider.rest;
+package com.hzqing.rest;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,7 +12,6 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.hzqing"})
-@MapperScan(basePackages = "com.hzqing.system.dal.mapper")
 public class IceOrangeApplication {
 
     public static void main(String[] args) {

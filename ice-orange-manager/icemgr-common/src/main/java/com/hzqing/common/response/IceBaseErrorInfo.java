@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.common.response;
+package com.hzqing.common.response;
 
 /**
  * @author 衡钊清

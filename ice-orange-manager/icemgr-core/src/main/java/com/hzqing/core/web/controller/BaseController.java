@@ -1,19 +1,48 @@
 package com.hzqing.core.web.controller;
 
-import com.hzqing.common.provider.common.enums.IceErrorResponseStatues;
-import com.hzqing.common.provider.common.exception.IceBaseException;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.hzqing.common.provider.dal.entity.BaseEntity;
+import com.hzqing.common.provider.service.IBaseService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author 衡钊清
  * @Classname IceBaseController
  * @Description 基础Controller类
- * @Date 2020/7/23 23:16
+ * @da 2020/7/23 23:16
  */
-public class IceBaseController {
+@Slf4j
+public class BaseController<S extends IBaseService<T>, T extends BaseEntity> {
 
-    public void isSuccess(int rows){
-        if (0 == rows){
-            throw new IceBaseException(IceErrorResponseStatues.INVALID_ID_NOT_FOUND);
-        }
+    @Autowired
+    @SuppressWarnings("all")
+    private S service;
+
+    @GetMapping("/{id}")
+    public T getById(@PathVariable String id) {
+        return service.getById(id);
     }
+
+    @GetMapping("/page/{num}/{size}")
+    public IPage<T> getPage(@PathVariable int num, @PathVariable int size, T t) {
+        return service.getPage(num, size, t);
+    }
+
+    @PutMapping("/{id}")
+    public void modifyById(@PathVariable String id, @RequestBody T t) {
+        service.modifyById(t);
+    }
+
+    @PostMapping
+    public void add(@RequestBody T t) {
+        service.add(t);
+    }
+
+    @DeleteMapping("/{id}")
+    public void realDelById(@PathVariable String id) {
+        service.realDelById(id);
+    }
+
 }

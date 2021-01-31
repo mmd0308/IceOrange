@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.system.dal.entity;
+package com.hzqing.system.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

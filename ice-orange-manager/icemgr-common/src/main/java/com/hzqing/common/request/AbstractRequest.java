@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.common.request;
+package com.hzqing.common.request;
 
 import java.io.Serializable;
 

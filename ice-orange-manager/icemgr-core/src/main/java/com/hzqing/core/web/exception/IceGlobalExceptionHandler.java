@@ -1,7 +1,7 @@
-package com.hzqing.common.provider.core.web.exception;
+package com.hzqing.core.web.exception;
 
-import com.hzqing.common.provider.common.exception.IceBaseException;
-import com.hzqing.common.provider.common.response.IceErrorResponse;
+import com.hzqing.common.exception.IceBaseException;
+import com.hzqing.common.response.IceErrorResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author 衡钊清
- * @Classname GlobalExceptionHandler
- * @Description 全局异常处理类
- * @Date 2020/7/23 22:07
+ * @classname GlobalExceptionHandler
+ * @description 全局异常处理类
+ * @date  2020/7/23 22:07
  */
 @RestControllerAdvice
 public class IceGlobalExceptionHandler {
@@ -23,9 +23,7 @@ public class IceGlobalExceptionHandler {
     /**
      * IceBaseException 异常信息封装
      *
-     * @return
-     * @Date 2020/7/23 22:37
-     * @Param
+     * @date 2020/7/23 22:37
      **/
     @ExceptionHandler(IceBaseException.class)
     public IceErrorResponse applicationException(HttpServletResponse response, IceBaseException exception) {
@@ -38,13 +36,14 @@ public class IceGlobalExceptionHandler {
     /**
      * 系统异常
      *
-     * @param response
-     * @return
+     * @param response HttpServletResponse
+     * @return 返回响应信息
      */
     @ExceptionHandler(Exception.class)
     public IceErrorResponse exception(HttpServletResponse response, Exception exception) {
         response.setStatus(500);
         log.error(exception.getMessage());
+        exception.printStackTrace();
         return new IceErrorResponse("500", "服务器异常");
     }
 

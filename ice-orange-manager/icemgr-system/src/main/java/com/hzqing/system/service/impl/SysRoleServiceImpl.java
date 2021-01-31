@@ -1,9 +1,9 @@
-package com.hzqing.common.provider.system.service.impl;
+package com.hzqing.system.service.impl;
 
 import com.hzqing.common.provider.service.impl.BaseServiceImpl;
-import com.hzqing.common.provider.system.dal.entity.SysRole;
-import com.hzqing.common.provider.system.dal.mapper.SysRoleMapper;
-import com.hzqing.common.provider.system.service.ISysRoleService;
+import com.hzqing.system.dal.entity.SysRole;
+import com.hzqing.system.dal.mapper.SysRoleMapper;
+import com.hzqing.system.service.ISysRoleService;
 import org.springframework.stereotype.Service;
 
 /**

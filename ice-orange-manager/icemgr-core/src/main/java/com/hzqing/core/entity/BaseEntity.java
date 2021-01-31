@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.core.entity;
+package com.hzqing.core.entity;
 
 import java.io.Serializable;
 

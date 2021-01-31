@@ -1,6 +1,6 @@
-package com.hzqing.common.provider.rest.vo;
+package com.hzqing.rest.vo;
 
-import com.hzqing.common.provider.common.request.AbstractRequest;
+import com.hzqing.common.request.AbstractRequest;
 import org.springframework.util.StringUtils;
 
 /**

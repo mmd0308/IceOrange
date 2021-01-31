@@ -1,7 +1,7 @@
-package com.hzqing.common.provider.rest.converter;
+package com.hzqing.rest.converter;
 
-import com.hzqing.common.provider.rest.vo.SysUserVo;
-import com.hzqing.common.provider.system.dal.entity.SysUser;
+import com.hzqing.rest.vo.SysUserVo;
+import com.hzqing.system.dal.entity.SysUser;
 import org.mapstruct.Mapper;
 
 import java.util.List;

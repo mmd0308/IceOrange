@@ -1,12 +1,10 @@
-package com.hzqing.common.provider.explorer.dal.entity;
+package com.hzqing.explorer.dal.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.hzqing.common.provider.dal.entity.BaseEntity;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import lombok.ToString;
 
 /**
  * @author 衡钊清
@@ -15,11 +13,9 @@ import java.time.LocalDateTime;
  * @Date 2020/7/24 20:52
  */
 @Data
+@ToString(callSuper = true)
 @TableName("exp_date_type")
-public class ExpDateType {
-
-    @TableId(type = IdType.ASSIGN_UUID)
-    private String id;
+public class ExpDateType extends BaseEntity {
 
     /**
      * 数据类型名称
@@ -46,28 +42,6 @@ public class ExpDateType {
      * 备注
      */
     private String remark;
-
-    /**
-     * 创建者账号
-     */
-    @TableField("create_by")
-    private String createBy;
-
-    /**
-     * 创建时间
-     */
-    @TableField("create_time")
-    private LocalDateTime createTime;
-
-    /**
-     * 更新者账号
-     */
-    @TableField("update_by")
-    private String updateBy;
-
-    /**
-     * 更新时间
-     */
-    @TableField("update_time")
-    private LocalDateTime updateTime;
 }
+
+

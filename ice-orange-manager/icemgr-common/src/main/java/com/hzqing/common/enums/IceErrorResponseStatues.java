@@ -1,7 +1,7 @@
-package com.hzqing.common.provider.common.enums;
+package com.hzqing.common.enums;
 
-import com.hzqing.common.provider.common.constants.IceHttpStatusConstants;
-import com.hzqing.common.provider.common.response.IceBaseErrorInfo;
+import com.hzqing.common.constants.IceHttpStatusConstants;
+import com.hzqing.common.response.IceBaseErrorInfo;
 
 /**
  * @author 衡钊清

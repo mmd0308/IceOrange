@@ -1,9 +1,9 @@
-package com.hzqing.common.provider.system.service.impl;
+package com.hzqing.system.service.impl;
 
 import com.hzqing.common.provider.service.impl.BaseServiceImpl;
-import com.hzqing.common.provider.system.dal.entity.SysResources;
-import com.hzqing.common.provider.system.dal.mapper.SysResourcesMapper;
-import com.hzqing.common.provider.system.service.ISysResourcesService;
+import com.hzqing.system.dal.entity.SysResources;
+import com.hzqing.system.dal.mapper.SysResourcesMapper;
+import com.hzqing.system.service.ISysResourcesService;
 import org.springframework.stereotype.Service;
 
 /**

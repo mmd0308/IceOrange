@@ -1,10 +1,50 @@
 package com.hzqing.common.provider.dal.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDateTime;
+
 /**
  * @author 衡钊清
  * @Classname BaseEntity
- * @Description TODO
+ * @Description 基础实体类
  * @Date 2020/7/24 22:58
  */
+@Setter
+@Getter
 public class BaseEntity {
+
+    /**
+     * 表主键
+     */
+    @TableId(type = IdType.ASSIGN_UUID)
+    private String id;
+
+    /**
+     * 创建者账号
+     */
+    @TableField("create_by")
+    private String createBy;
+
+    /**
+     * 创建时间
+     */
+    @TableField("create_time")
+    private LocalDateTime createTime;
+
+    /**
+     * 更新者账号
+     */
+    @TableField("update_by")
+    private String updateBy;
+
+    /**
+     * 更新时间
+     */
+    @TableField("update_time")
+    private LocalDateTime updateTime;
 }

@@ -1,9 +1,9 @@
 package com.hzqing.system.service.impl;
 
 import com.hzqing.common.provider.service.impl.BaseServiceImpl;
-import com.hzqing.system.dal.entity.SysUser;
-import com.hzqing.system.dal.mapper.SysUserMapper;
-import com.hzqing.system.service.ISysUserService;
+import com.hzqing.system.dal.entity.SysUsersGroups;
+import com.hzqing.system.dal.mapper.SysUsersGroupsMapper;
+import com.hzqing.system.service.ISysUserGroupsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
  */
 @Slf4j
 @Service
-public class SysUserServiceImpl extends BaseServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
+public class SysUserGroupsServiceImpl extends BaseServiceImpl<SysUsersGroupsMapper, SysUsersGroups> implements ISysUserGroupsService {
 
     @Autowired
-    private SysUserMapper userMapper;
+    private SysUsersGroupsMapper usersGroupsMapper;
 }

@@ -1,7 +1,7 @@
-package com.hzqing.common.provider.system.service;
+package com.hzqing.system.service;
 
 import com.hzqing.common.provider.service.IBaseService;
-import com.hzqing.common.provider.system.dal.entity.SysResources;
+import com.hzqing.system.dal.entity.SysResources;
 
 /**
  * @author 衡钊清

@@ -1,12 +1,12 @@
-package com.hzqing.common.provider.system.dal.entity;
+package com.hzqing.system.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.hzqing.common.provider.dal.entity.BaseEntity;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
  */
 @Data
 @TableName(value = "sys_user")
-public class SysUser implements Serializable {
+public class SysUser extends BaseEntity {
 
     /**
      * 用户id

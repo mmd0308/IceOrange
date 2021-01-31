@@ -1,9 +1,9 @@
-package com.hzqing.common.provider.system.service.impl;
+package com.hzqing.system.service.impl;
 
 import com.hzqing.common.provider.service.impl.BaseServiceImpl;
-import com.hzqing.common.provider.system.dal.entity.SysUser;
-import com.hzqing.common.provider.system.dal.mapper.SysUserMapper;
-import com.hzqing.common.provider.system.service.ISysUserService;
+import com.hzqing.system.dal.entity.SysUser;
+import com.hzqing.system.dal.mapper.SysUserMapper;
+import com.hzqing.system.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="icemgr-common-provider" />
+        <module name="icemgr-core" />
+        <module name="icemgr-system" />
+        <module name="icemgr-explorer" />
+        <module name="icemgr-common" />
+        <module name="icemgr-rest" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

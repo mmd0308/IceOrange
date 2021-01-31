@@ -6,18 +6,20 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.hzqing.common.provider.dal.entity.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 
 /**
  * @author 衡钊清
- * @Classname SysRole
- * @Description 系统角色实体类
- * @Date 2020/7/24 20:34
+ * @Classname SysUsersGroups
+ * @Description 用户组实体类
+ * @Date 2021/1/31 08:34
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-@TableName(value = "sys_role")
-public class SysRole extends BaseEntity {
+@TableName(value = "sys_users_groups")
+public class SysUsersGroups extends BaseEntity {
 
     /**
      * 用户id
@@ -33,17 +35,13 @@ public class SysRole extends BaseEntity {
     /**
      * 角色权限字符串
      */
-    private String permission;
+    @TableField("show_name")
+    private String showName;
 
     /**
      * 顺序
      */
-    private Integer sort;
-
-    /**
-     * 角色状态
-     */
-    private String status;
+    private Integer sort = 0;
 
     /**
      * 备注

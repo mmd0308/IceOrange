@@ -1,7 +1,7 @@
-package com.hzqing.common.provider.system.dal.mapper;
+package com.hzqing.system.dal.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzqing.common.provider.system.dal.entity.SysResources;
+import com.hzqing.system.dal.entity.SysResources;
 
 /**
  * @author 衡钊清

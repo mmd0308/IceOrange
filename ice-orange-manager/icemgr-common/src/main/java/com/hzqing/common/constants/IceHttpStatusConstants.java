@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.common.constants;
+package com.hzqing.common.constants;
 
 /**
  * @author 衡钊清

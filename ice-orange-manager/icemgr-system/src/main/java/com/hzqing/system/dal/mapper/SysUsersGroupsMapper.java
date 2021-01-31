@@ -1,7 +1,7 @@
 package com.hzqing.system.dal.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzqing.system.dal.entity.SysUser;
+import com.hzqing.system.dal.entity.SysUsersGroups;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
  * @Date 2020/7/22 20:40
  */
 @Repository
-public interface SysUserMapper extends BaseMapper<SysUser> {
+public interface SysUsersGroupsMapper extends BaseMapper<SysUsersGroups> {
 }
