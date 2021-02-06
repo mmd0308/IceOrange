@@ -6,32 +6,45 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="icemgr-common-provider" />
         <module name="icemgr-system-provider" />
+        <module name="icemgr-common-provider" />
+        <module name="icemgr-modules" />
         <module name="icemgr-gateway" />
         <module name="icemgr-system-api" />
         <module name="icemgr-common-core" />
+        <module name="icemgr-common-api" />
         <module name="icemgr-rest" />
         <module name="icemgr-common-rest" />
-        <module name="icemgr-common-api" />
+        <module name="icemgr-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ice-orange-manager" target="11" />
-      <module name="icemgr-core" target="11" />
-      <module name="icemgr-explorer" target="11" />
+      <module name="icemgr-auth" target="11" />
+      <module name="icemgr-common" target="11" />
+      <module name="icemgr-common-api" target="11" />
+      <module name="icemgr-common-core" target="11" />
+      <module name="icemgr-common-provider" target="11" />
+      <module name="icemgr-common-rest" target="11" />
+      <module name="icemgr-dependencies" target="11" />
+      <module name="icemgr-gateway" target="11" />
+      <module name="icemgr-modules" target="11" />
+      <module name="icemgr-rest" target="11" />
+      <module name="icemgr-system" target="1.5" />
+      <module name="icemgr-system-api" target="11" />
+      <module name="icemgr-system-provider" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="icemgr-common-api" options="-parameters" />
-      <module name="icemgr-common-core" options="-parameters" />
-      <module name="icemgr-common-provider" options="-parameters" />
-      <module name="icemgr-common-rest" options="-parameters" />
-      <module name="icemgr-gateway" options="-parameters" />
-      <module name="icemgr-rest" options="-parameters" />
-      <module name="icemgr-system-api" options="-parameters" />
-      <module name="icemgr-system-provider" options="-parameters" />
+      <module name="ice-orange-manager" options="-parameters" />
+      <module name="icemgr-auth" options="" />
+      <module name="icemgr-common" options="-parameters" />
+      <module name="icemgr-common-api" options="" />
+      <module name="icemgr-common-core" options="" />
+      <module name="icemgr-common-provider" options="" />
+      <module name="icemgr-common-rest" options="" />
+      <module name="icemgr-modules" options="-parameters" />
     </option>
   </component>
 </project>

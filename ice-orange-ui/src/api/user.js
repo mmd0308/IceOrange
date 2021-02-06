@@ -1,10 +1,18 @@
 import request from '@/utils/request'
 
 export function login(data) {
+  const grant_type = 'password'
   return request({
-    url: '/user/login',
+    url: '/ice/auth/oauth/token',
     method: 'post',
-    data
+    headers: {
+      Authorization: 'Basic aWNlbWdyLXVpOkljZU1ncl9VSQ=='
+    },
+    params: {
+      username,
+      password,
+      grant_type: grant_type
+    }
   })
 }
 

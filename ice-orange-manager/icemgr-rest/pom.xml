@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.hzqing</groupId>
         <artifactId>icemgr-dependencies</artifactId>
-        <version>1.0.0.RELEASE</version>
+        <version>1.0.0</version>
     </parent>
 
+    <groupId>com.hzqing.rest</groupId>
     <artifactId>icemgr-rest</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>icemgr-rest</name>
+    <description>Demo project for Spring Boot</description>
+
 
     <dependencies>
         <dependency>
-            <groupId>com.hzqing</groupId>
+            <groupId>com.hzqing.common</groupId>
             <artifactId>icemgr-common-rest</artifactId>
-            <version>1.0.0.RELEASE</version>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hzqing.modules.system</groupId>
+            <artifactId>icemgr-system-api</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.hzqing</groupId>
-            <artifactId>icemgr-system-api</artifactId>
-            <version>1.0.0.RELEASE</version>
-        </dependency>
 
     </dependencies>
 

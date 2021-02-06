@@ -54,16 +54,13 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
+import { debuglog } from 'util';
 
 export default {
   name: 'Login',
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
-      } else {
-        callback()
-      }
+  callback()
     }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
@@ -74,11 +71,10 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: 'hzqing',
+        password: 'hzqing'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
         password: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
       loading: false,

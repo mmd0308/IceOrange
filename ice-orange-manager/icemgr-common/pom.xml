@@ -1,46 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <modules>
-        <module>icemgr-common-core</module>
-        <module>icemgr-common-rest</module>
-        <module>icemgr-common-api</module>
-    </modules>
-
     <parent>
+        <artifactId>ice-orange-manager</artifactId>
         <groupId>com.hzqing</groupId>
-        <artifactId>icemgr-dependencies</artifactId>
-        <version>1.0.0.RELEASE</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-
+    <modelVersion>4.0.0</modelVersion>
 
     <artifactId>icemgr-common</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>icemgr-common</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.9</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>icemgr-common-core</module>
+        <module>icemgr-common-api</module>
+        <module>icemgr-common-provider</module>
+        <module>icemgr-common-rest</module>
+    </modules>
 
 
 </project>

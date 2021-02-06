@@ -3,40 +3,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.hzqing</groupId>
         <artifactId>icemgr-dependencies</artifactId>
-        <version>1.0.0.RELEASE</version>
+        <version>1.0.0</version>
     </parent>
 
+    <groupId>com.hzqing.common</groupId>
     <artifactId>icemgr-common-provider</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.0</version>
     <name>icemgr-common-provider</name>
     <packaging>jar</packaging>
 
-
     <dependencies>
-
         <dependency>
-            <groupId>com.hzqing</groupId>
+            <groupId>com.hzqing.common</groupId>
             <artifactId>icemgr-common-core</artifactId>
-            <version>1.0.0.RELEASE</version>
+            <version>1.0.0</version>
         </dependency>
 
+        <!--    连接mysql    -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.16</version>
         </dependency>
-
-        <!--   接口返回数据有分页，使用mybatis-plus 插件  start   -->
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-core</artifactId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.4.1</version>
         </dependency>
-
-        <!--   接口返回数据有分页，使用mybatis-plus 插件  end   -->
-
         <!--阿里数据库连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -44,57 +40,6 @@
             <version>1.2.4</version>
         </dependency>
 
-        <!--    连接mysql    -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-
-        <!-- pagehelper 分页插件 -->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.3.0</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-
-        <!--   dubbo     -->
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo</artifactId>
-        </dependency>
-
-        <!--    nacos 为服务注册中心 start    -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-        </dependency>
-        <!--    nacos 为服务注册中心 end    -->
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-    </build>
 </project>

@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: icemgr-rest
+          uri: lb://icemgr-rest
+          predicates:
+            - Path=/ice/system/**
+          filters:
+            - StripPrefix=2 # 去掉url2前缀
+        - id: icemgr-auth
+          uri: lb://icemgr-auth
+          predicates:
+            - Path=/ice/auth/**
+          filters:
+            - StripPrefix=2
+  application:
+    name: icemgr-gateway
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

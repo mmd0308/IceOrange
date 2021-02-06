@@ -1,18 +1,21 @@
 package com.hzqing.common.api.request;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
- *  分页请求
+ * 分页请求
+ *
  * @author hzqing
  * @date 2019-08-11 22:48
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class PageRequest extends AbstractRequest {
     /**
      * 当前页码
      */
-    private int pageNum;
+    private int pageNum = 0;
 
     /**
      * 每页显示数量
@@ -29,7 +32,7 @@ public class PageRequest extends AbstractRequest {
 
     @Override
     public void checkParams() {
-        if (pageNum == 0){
+        if (pageNum == 0) {
 //            throw new ParamsValidateException(
 //                    CommonRetCodeConstants.INVALID_PARAMETER.getCode(),
 //                    "分页请求，当前也不能为0");

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>icemgr-common</module>
+    </modules>
+    <parent>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-build</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<groupId>com.hzqing</groupId>
+	<artifactId>ice-orange-manager</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ice-orange-manager</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+		<!-- Dependency Versions -->
+		<spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
+		<spring-cloud-commons.version>2.2.5.RELEASE</spring-cloud-commons.version>
+		<spring-cloud-netflix.version>2.2.5.RELEASE</spring-cloud-netflix.version>
+		<spring-cloud-openfeign.version>2.2.5.RELEASE</spring-cloud-openfeign.version>
+		<spring-cloud-bus.version>2.2.3.RELEASE</spring-cloud-bus.version>
+		<spring-cloud-gateway.version>2.2.5.RELEASE</spring-cloud-gateway.version>
+		<spring-cloud-stream.version>Horsham.SR3</spring-cloud-stream.version>
+		<spring-cloud-consul.version>2.2.4.RELEASE</spring-cloud-consul.version>
+		<spring-cloud-config.version>2.2.5.RELEASE</spring-cloud-config.version>
+		<spring-cloud-zookeeper.version>2.2.3.RELEASE</spring-cloud-zookeeper.version>
+
+	</properties>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
