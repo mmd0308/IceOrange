@@ -34,7 +34,8 @@ public class IceUserServiceImpl implements IceUserService {
 
     @Override
     public void create(CreateUserRequest request) {
-        userMapper.insert(userConverter.requestToUser(request));
+        IceUser user = userConverter.requestToUser(request);
+        userMapper.insert(user);
     }
 
     @Override
@@ -53,6 +54,8 @@ public class IceUserServiceImpl implements IceUserService {
         IcePageResponse<UserDto> response = new IcePageResponse<>();
         response.setData(userConverter.listToListDto(userIPage.getRecords()));
         response.setTotal(userIPage.getTotal());
+        response.setPageNum(userIPage.getCurrent());
+        response.setPageSize(userIPage.getSize());
         return response;
     }
 

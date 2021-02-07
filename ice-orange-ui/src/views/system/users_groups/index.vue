@@ -48,13 +48,13 @@
   import UserForm from './form/index'
   import BindUsers from './bind_users/index'
   import BindPerms from './bind_perms/index'
-  import { page,deleteById } from '@/api/common/index'
+  import { list,deleteById } from '@/api/common/index'
 
   export default {
     props: {},
     data() {
       return {
-        bathPath: '/api/system/v1/users/groups',
+         moudle:'users/groups',
         tableLoading: false,
         pageQuery: {
           pageNum: 1,
@@ -76,7 +76,7 @@
     methods: {
       handlePage() {
         this.tableLoading = true
-        page(this.bathPath,this.pageQuery).then(res => {
+        list(this.moudle,this.pageQuery).then(res => {
           this.tableData = res.records
           this.total = res.total
           this.tableLoading = false

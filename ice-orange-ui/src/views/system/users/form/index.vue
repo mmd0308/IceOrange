@@ -33,7 +33,7 @@
   export default {
     data() {
       return {
-        bathPath: '/api/system/v1/users',
+        moudle: 'users',
         dialogTitle: '',
         dialogVisible: false,
         formStatus: 'create',
@@ -67,7 +67,7 @@
       createData() {
         this.$refs[this.dataFormRef].validate(validate => {
           if (validate) {
-            create(this.bathPath, this.dataForm).then(() => {
+            create(this.moudle, this.dataForm).then(() => {
               this.handleCancel()
             })
           } else {
@@ -78,7 +78,7 @@
       updateData() {
         this.$refs[this.dataFormRef].validate(validate => {
           if (validate) {
-            update(this.bathPath, this.dataForm).then(() => {
+            update(this.moudle, this.dataForm).then(() => {
               this.handleCancel()
             })
           } else {

@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-const bastPath = '/api/system/v1/'
+const bastPath = '/ice/system/v1/'
 
-export function list(path, params) {
+export function list(moudle, params) {
   return request({
     url: bastPath + moudle,
     method: 'get',
@@ -17,17 +17,17 @@ export function page(path, params) {
   })
 }
 
-export function create(path, params) {
+export function create(moudle, params) {
   return request({
-    url: path,
+    url: bastPath + moudle,
     method: 'post',
     data: params
   })
 }
 
-export function update(path, params) {
+export function update(moudle, params) {
   return request({
-    url: path + '/' + params.id,
+    url: bastPath + moudle,
     method: 'put',
     data: params
   })

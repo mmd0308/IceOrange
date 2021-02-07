@@ -2,7 +2,8 @@ package com.hzqing.modules.system.api.service;
 
 
 import com.hzqing.common.api.request.IDRequest;
-import com.hzqing.modules.system.api.dto.CreateUserGroupRequest;
+import com.hzqing.common.api.response.IcePageResponse;
+import com.hzqing.modules.system.api.dto.*;
 
 /**
  * @author 衡钊清
@@ -13,6 +14,10 @@ import com.hzqing.modules.system.api.dto.CreateUserGroupRequest;
 public interface IceUserGroupService {
 
     void create(CreateUserGroupRequest request);
+
+    UserGroupDto getById(IDRequest request);
+
+    IcePageResponse<UserGroupDto> list(UserGroupListRequest request);
 
     void removeById(IDRequest request);
 

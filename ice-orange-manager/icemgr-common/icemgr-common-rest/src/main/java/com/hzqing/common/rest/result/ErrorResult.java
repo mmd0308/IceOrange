@@ -5,8 +5,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import java.io.Serializable;
-
 /**
  * 结果响应
  *
@@ -32,6 +30,12 @@ public class ErrorResult extends BaseResult {
     }
 
     public ErrorResult(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public ErrorResult(String requestId, String code, String message) {
+        super(requestId);
         this.code = code;
         this.message = message;
     }

@@ -23,9 +23,9 @@ public class IcePageResponse<T> implements Serializable {
      */
     private List<T> data;
 
-    private int page;
+    private long pageNum;
 
-    private int size;
+    private long pageSize;
 
     private long total;
 

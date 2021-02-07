@@ -22,7 +22,7 @@ public class UserDto implements Serializable {
     /**
      * 用户名
      */
-    private String username;
+    private String userName;
 
     /**
      * 密码

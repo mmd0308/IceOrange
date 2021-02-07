@@ -20,4 +20,10 @@ public class BaseResult implements Serializable {
      */
     private String requestId;
 
+    public BaseResult() {
+    }
+
+    public BaseResult(String requestId) {
+        this.requestId = requestId;
+    }
 }

@@ -33,6 +33,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
         GrantedAuthority authority = new SimpleGrantedAuthority("ice:user:list");
         grantedAuthorities.add(authority);
+        grantedAuthorities.add(new SimpleGrantedAuthority("ice:user:create"));
         return new UserDetailsDto("hzqing", passwordEncoder.encode("hzqing"), grantedAuthorities);
     }
 }

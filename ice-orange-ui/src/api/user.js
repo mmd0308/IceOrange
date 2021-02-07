@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-export function login(data) {
+export function login(username,password) {
   const grant_type = 'password'
   return request({
     url: '/ice/auth/oauth/token',

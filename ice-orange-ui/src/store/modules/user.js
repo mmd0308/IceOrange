@@ -32,15 +32,11 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      debugger
-      login({ username: username.trim(), password: password }).then(response => {
-        debugger
-        const { data } = response
-        commit('SET_TOKEN', data.access_token)
-        setToken(data.token)
+      login( username.trim(),  password ).then(response => {
+        commit('SET_TOKEN', response.access_token)
+        setToken(response.access_token)
         resolve()
       }).catch(error => {
-      debugger
         reject(error)
       })
     })
@@ -70,14 +66,10 @@ const actions = {
   // user logout
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
-      logout(state.token).then(() => {
-        removeToken() // must remove  token  first
-        resetRouter()
-        commit('RESET_STATE')
-        resolve()
-      }).catch(error => {
-        reject(error)
-      })
+      removeToken() // must remove  token  first
+      resetRouter()
+      commit('RESET_STATE')
+      resolve()
     })
   },
 

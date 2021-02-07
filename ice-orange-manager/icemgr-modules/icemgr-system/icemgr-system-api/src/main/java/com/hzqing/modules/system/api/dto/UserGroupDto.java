@@ -1,16 +1,23 @@
 package com.hzqing.modules.system.api.dto;
 
-import com.hzqing.common.api.request.AbstractRequest;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
+ * TODO
+ *
  * @author hzqing
- * @date 2019-08-10 00:35
- */
-@EqualsAndHashCode(callSuper = true)
+ * @date 2021/1/31 20:26
+ **/
 @Data
-public class CreateUserRequest extends AbstractRequest {
+public class UserGroupDto implements Serializable {
+
+    /**
+     * 用户id
+     */
+    private String id;
 
     /**
      * 用户名
@@ -28,7 +35,7 @@ public class CreateUserRequest extends AbstractRequest {
     private String phone;
 
     /**
-     * 注册邮箱dd
+     * 注册邮箱
      */
     private String email;
 
@@ -38,10 +45,13 @@ public class CreateUserRequest extends AbstractRequest {
     private String sex;
 
     /**
-     * 请求参数进行校验
+     * 创建时间
      */
-    @Override
-    public void checkParams() {
+    private LocalDateTime createTime;
 
-    }
+    /**
+     * 更新时间
+     */
+    private LocalDateTime updateTime;
+
 }

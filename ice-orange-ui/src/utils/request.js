@@ -10,9 +10,8 @@ const service = axios.create({
 })
 service.interceptors.request.use(
   config => {
-    debugger
     const isToken = (config.headers || {}).isToken === false
-    const token = store.getters.access_token
+    const token = store.getters.token
     console.log(token)
     console.log(isToken)
     if (token && !isToken) {
@@ -21,7 +20,6 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    debugger
     console.log(error) // for debug
     return Promise.reject(error)
   }
@@ -30,16 +28,17 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   response => {
-    debugger
     console.log(response)
     // if the custom code is not 20000, it is judged as an error.
+    if(response.status== 200) {
     return response.data
-    // if (res.code !== 20000) {
+    }
+    // if (response.status != 200) {
     //   Message({
     //     message: res.message || 'Error',
     //     type: 'error',
     //     duration: 5 * 1000
-    //   })
+    //   }
     //
     //   // 50008: Illegal token; 50012: Other clients logged in; 50014: Token expired;
     //   if (res.code === 50008 || res.code === 50012 || res.code === 50014) {

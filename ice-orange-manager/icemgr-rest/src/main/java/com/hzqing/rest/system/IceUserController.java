@@ -39,11 +39,13 @@ public class IceUserController {
         return userService.getById(new IDRequest(null));
     }
 
+    @PreAuthorize(value = "hasAuthority('ice:user:create')")
     @PostMapping
-    public void create(CreateUserRequest request) {
+    public void create(@RequestBody CreateUserRequest request) {
         userService.create(request);
     }
 
+    @PutMapping
     public void updateById(UpdateUserRequest request) {
         userService.updateById(request);
     }

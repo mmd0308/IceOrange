@@ -2,6 +2,7 @@ package com.hzqing.common.rest.exception;
 
 import com.hzqing.common.rest.result.ErrorResult;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,6 +29,14 @@ public class GlobalExceptionHandler {
     public ErrorResult errorHandler(HttpServletRequest request, NoHandlerFoundException exception, HttpServletResponse response) {
         ErrorResult errorResult = new ErrorResult("405", "ll");
         return errorResult;
+    }
+
+    @ExceptionHandler(value = AccessDeniedException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    @ResponseBody
+    public ErrorResult errorHandler(HttpServletRequest request, AccessDeniedException e, HttpServletResponse response) {
+        ErrorResult result = new ErrorResult("405", e.getMessage());
+        return result;
     }
 
     @ExceptionHandler(value = Exception.class)

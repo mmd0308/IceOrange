@@ -8,8 +8,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
-import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
-import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
@@ -24,18 +22,12 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableResourceServer
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ResourcesConfig extends ResourceServerConfigurerAdapter {
+
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("icemgr-rest").tokenStore(jwtTokenStore())
+        resources.resourceId("icemgr-rest")
+                .tokenStore(jwtTokenStore())
                 .stateless(true);
-    }
-
-    private ResourceServerTokenServices tokenServices() {
-        RemoteTokenServices tokenServices = new RemoteTokenServices();
-        tokenServices.setCheckTokenEndpointUrl("http://localhost:8888/oauth/check_token");
-        tokenServices.setClientId("icemgr-rest");
-        tokenServices.setClientSecret("icemgr-rest");
-        return tokenServices;
     }
 
     @Bean
@@ -55,7 +47,7 @@ public class ResourcesConfig extends ResourceServerConfigurerAdapter {
         http.authorizeRequests()
 //                .antMatchers("/v/users/1")
 //                .access("#oauth2.hasScope('all')")
-                .anyRequest().permitAll()
+                .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
