@@ -20,7 +20,7 @@ service.interceptors.request.use(
     return config
   },
   error => {
-    console.log(error) // for debug
+    console.log('-'+error) // for debug
     return Promise.reject(error)
   }
 )
@@ -31,7 +31,7 @@ service.interceptors.response.use(
     console.log(response)
     // if the custom code is not 20000, it is judged as an error.
     if(response.status== 200) {
-    return response.data
+        return response.data
     }
     // if (response.status != 200) {
     //   Message({

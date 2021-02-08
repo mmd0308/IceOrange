@@ -1,8 +1,8 @@
 package com.hzqing.modules.system.provider.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.hzqing.common.api.request.IDRequest;
 import com.hzqing.common.api.response.IcePageResponse;
 import com.hzqing.modules.system.api.dto.CreateUserRequest;
@@ -11,10 +11,12 @@ import com.hzqing.modules.system.api.dto.UserDto;
 import com.hzqing.modules.system.api.dto.UserListRequest;
 import com.hzqing.modules.system.api.service.IceUserService;
 import com.hzqing.modules.system.provider.converter.UserConverter;
-import com.hzqing.modules.system.provider.dal.entity.IceUser;
-import com.hzqing.modules.system.provider.dal.mapper.IceUserMapper;
+import com.hzqing.modules.system.provider.dal.entity.SysUser;
+import com.hzqing.modules.system.provider.dal.mapper.SysUserMapper;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 /**
  * @author 衡钊清
@@ -23,10 +25,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Date 2020/7/22 20:40
  */
 @DubboService
-public class IceUserServiceImpl implements IceUserService {
+public class SysUserServiceImpl implements IceUserService {
 
     @Autowired
-    private IceUserMapper userMapper;
+    private SysUserMapper userMapper;
 
     @Autowired
     private UserConverter userConverter;
@@ -34,28 +36,31 @@ public class IceUserServiceImpl implements IceUserService {
 
     @Override
     public void create(CreateUserRequest request) {
-        IceUser user = userConverter.requestToUser(request);
+        SysUser user = userConverter.requestToUser(request);
         userMapper.insert(user);
     }
 
     @Override
     public UserDto getById(IDRequest request) {
         request.checkParams();
-        IceUser sysUser = userMapper.selectById(request.getId());
+        SysUser sysUser = userMapper.selectById(request.getId());
         return userConverter.userToDto(sysUser);
     }
 
     @Override
     public IcePageResponse<UserDto> list(UserListRequest request) {
-        request.checkParams();
-        IPage<IceUser> userIPage = userMapper.selectPage(
-                new Page<IceUser>(request.getPageNum(), request.getPageSize()),
-                new QueryWrapper<>(new IceUser()));
         IcePageResponse<UserDto> response = new IcePageResponse<>();
-        response.setData(userConverter.listToListDto(userIPage.getRecords()));
-        response.setTotal(userIPage.getTotal());
-        response.setPageNum(userIPage.getCurrent());
-        response.setPageSize(userIPage.getSize());
+        try {
+            PageHelper.startPage(request.getPageNum(), request.getPageSize());
+            List<SysUser> list = userMapper.selectList(new QueryWrapper<>(new SysUser()));
+            PageInfo<SysUser> pageInfo = new PageInfo<>(list);
+            response.setData(userConverter.convert(pageInfo.getList()));
+            response.setPageNum(pageInfo.getPageNum());
+            response.setPageNum(pageInfo.getPageSize());
+            response.setTotal(pageInfo.getTotal());
+        } finally {
+            PageHelper.clearPage();
+        }
         return response;
     }
 
@@ -66,6 +71,6 @@ public class IceUserServiceImpl implements IceUserService {
 
     @Override
     public void updateById(UpdateUserRequest request) {
-
+        userMapper.updateById(userConverter.convert(request));
     }
 }

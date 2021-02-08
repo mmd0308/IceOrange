@@ -4,23 +4,18 @@
   :before-close="handleCancel"
   :visible.sync="drawerVisible"
   direction="rtl"
+  size="40%"
   ref="drawer"
   >
   <div class="ice-drawer__content">
       <el-form :ref="dataFormRef" :rules="rules" :model="dataForm" label-position="top" >
-        <el-form-item label="用户组名称:" prop="name">
+        <el-form-item label="用户组:" prop="name">
           <el-input v-model="dataForm.name"/>
         </el-form-item>
-        <el-form-item label="显示名称:" prop="showName">
+        <el-form-item label="用户:" prop="showName">
           <el-input v-model="dataForm.showName"/>
         </el-form-item>
-        <el-form-item label="备注:" prop="remark">
-          <el-input
-            type="textarea"
-            :rows="2"
-            v-model="dataForm.remark">
-</el-input>
-        </el-form-item>
+
       </el-form>
       <div slot="footer" class="ice-drawer__footer">
         <el-button type="primary" size="small" icon="el-icon-check"
@@ -59,33 +54,15 @@
           remark: null
         }
       },
-      handleToCreate() {
+      handleToBindUsers(row) {
         this.drawerVisible = true
-        this.drawerTitle = '创建用户组'
+        this.drawerTitle = '添加组成员'
         this.resetForm()
       },
-      handleToUpdate(row) {
-        this.drawerVisible = true
-        this.drawerTitle = '修改用户组'
-        this.formStatus = 'update'
-        this.resetForm()
-        this.dataForm = row
-      },
-      createData() {
+      handleBindUsers() {
         this.$refs[this.dataFormRef].validate(validate => {
           if (validate) {
             create(this.bathPath, this.dataForm).then(() => {
-              this.handleCancel()
-            })
-          } else {
-            return false
-          }
-        })
-      },
-      updateData() {
-        this.$refs[this.dataFormRef].validate(validate => {
-          if (validate) {
-            update(this.bathPath, this.dataForm).then(() => {
               this.handleCancel()
             })
           } else {
@@ -98,7 +75,6 @@
       },
       handleCancel() {
         this.drawerVisible = false
-        this.$emit('refreshList')
       }
     }
   }

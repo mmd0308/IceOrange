@@ -37,7 +37,6 @@ public class IDRequest extends AbstractRequest {
     @Override
     public void checkParams() {
         if (StringUtils.isEmpty(id)) {
-            // todo
         }
     }
 }

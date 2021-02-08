@@ -77,7 +77,7 @@
       handlePage() {
         this.tableLoading = true
         list(this.moudle,this.pageQuery).then(res => {
-          this.tableData = res.records
+          this.tableData = res.data
           this.total = res.total
           this.tableLoading = false
         })
@@ -100,7 +100,7 @@
           cancelButtonText: '取消',
           typr: 'warning'
         }).then(() => {
-          deleteById(this.bathPath, id).then(() => {
+          deleteById(this.moudle, id).then(() => {
             this.refreshList()
           })
         })

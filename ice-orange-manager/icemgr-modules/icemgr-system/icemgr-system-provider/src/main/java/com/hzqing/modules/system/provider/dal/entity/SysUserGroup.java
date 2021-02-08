@@ -1,14 +1,10 @@
 package com.hzqing.modules.system.provider.dal.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.hzqing.common.provider.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.time.LocalDateTime;
 
 /**
  * @author 衡钊清
@@ -18,8 +14,8 @@ import java.time.LocalDateTime;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName(value = "ice_user_group")
-public class IceUserGroup extends BaseEntity {
+@TableName(value = "sys_user_group")
+public class SysUserGroup extends BaseEntity {
 
     private String name;
 

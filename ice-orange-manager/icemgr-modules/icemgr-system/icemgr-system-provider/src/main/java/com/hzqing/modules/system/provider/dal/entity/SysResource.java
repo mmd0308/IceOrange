@@ -18,8 +18,8 @@ import java.time.LocalDateTime;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("ice_resource")
-public class IceResource extends BaseEntity {
+@TableName("sys_resource")
+public class SysResource extends BaseEntity {
     /**
      * 用户id
      */

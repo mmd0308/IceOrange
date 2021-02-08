@@ -1,7 +1,13 @@
 <template>
-  <el-dialog :title="dialogTitle" :visible.sync="dialogVisible" width="40%">
-    <div style="margin:0px 50px;">
-      <el-form :ref="dataFormRef" :rules="rules" :model="dataForm" label-position="left" label-width="100px">
+  <el-drawer
+  :title="drawerTitle"
+  :before-close="handleCancel"
+  :visible.sync="drawerVisible"
+  direction="rtl"
+  ref="drawer"
+  >
+<div class="ice-drawer__content">
+      <el-form :ref="dataFormRef" :rules="rules" :model="dataForm" label-position="top">
         <el-form-item label="用户登陆名:" prop="username">
           <el-input v-model="dataForm.userName"/>
         </el-form-item>
@@ -18,14 +24,14 @@
 <!--          <el-input v-model="dataForm.phone"/>-->
 <!--        </el-form-item>-->
       </el-form>
-      <div slot="footer" class="dialog-footer">
+      <div slot="footer" class="ice-drawer__footer">
         <el-button type="primary" size="small" icon="el-icon-check"
-                   @click="formStatus==='create'?createData():updateData()">保存
+                   @click="formStatus==='create'?createData():updateData()">确定
         </el-button>
-        <el-button type="info" size="small" icon="el-icon-close" @click="dialogVisible = false">取消</el-button>
+        <el-button type="info" size="small" icon="el-icon-close" @click="handleCancel">取消</el-button>
       </div>
     </div>
-  </el-dialog>
+  </el-drawer>
 </template>
 <script>
   import { create, update } from '@/api/common/index'
@@ -34,8 +40,8 @@
     data() {
       return {
         moudle: 'users',
-        dialogTitle: '',
-        dialogVisible: false,
+        drawerTitle: '',
+        drawerVisible: false,
         formStatus: 'create',
         dataFormRef: 'dataFormRef',
         dataForm: this.initForm(),
@@ -53,13 +59,13 @@
         }
       },
       handleCreate() {
-        this.dialogVisible = true
-        this.dialogTitle = '创建用户'
+        this.drawerVisible = true
+        this.drawerTitle = '创建用户'
         this.resetForm()
       },
       handleUpdate(row) {
-        this.dialogVisible = true
-        this.dialogTitle = '更新用户'
+        this.drawerVisible = true
+        this.drawerTitle = '更新用户'
         this.formStatus = 'update'
         this.resetForm()
         this.dataForm = row
@@ -90,7 +96,7 @@
         this.dataForm = this.initForm()
       },
       handleCancel() {
-        this.dialogVisible = false
+        this.drawerVisible = false
         this.$emit('refreshList')
       }
     }

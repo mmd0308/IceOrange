@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Validated
 @RequestMapping(IceVersionConstants.REST_VERSION_V1 + "/users")
-public class IceUserController {
+public class SysUserController {
 
     @DubboReference
     private IceUserService userService;
@@ -36,7 +36,7 @@ public class IceUserController {
     @PreAuthorize(value = "hasAuthority('ice:user:get')")
     @GetMapping("/{id}")
     public UserDto getById(@PathVariable String id) {
-        return userService.getById(new IDRequest(null));
+        return userService.getById(new IDRequest(id));
     }
 
     @PreAuthorize(value = "hasAuthority('ice:user:create')")
@@ -48,6 +48,11 @@ public class IceUserController {
     @PutMapping
     public void updateById(UpdateUserRequest request) {
         userService.updateById(request);
+    }
+
+    @DeleteMapping("/{id}")
+    public void removeById(String id) {
+        userService.removeById(new IDRequest(id));
     }
 
 }

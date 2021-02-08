@@ -56,50 +56,25 @@ export const constantRoutes = [
     }
   ]
   },
-
   {
-    path: '/example',
+    path: '/app',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'el-icon-s-help' },
-    children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
-      }
-    ]
-  },
-
-  {
-    path: '/form',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/project',
-    component: Layout,
+    meta: {
+      title: '应用管理',
+      icon: 'nested'
+    },
     children: [
       {
         path: 'index',
         name: 'Project',
         component: () => import('@/views/project/Index'),
-        meta: { title: '项目管理', icon: 'form' }
+        meta: { title: '应用管理', icon: 'form' }
+      },      
+      {
+        path: 'groups',
+        name: 'Project',
+        component: () => import('@/views/project/Index'),
+        meta: { title: '应用组管理', icon: 'form' }
       }
     ]
   },
@@ -136,27 +111,22 @@ export const constantRoutes = [
         meta: { title: '用户管理' }
       },
       {
-        path: 'users_groups',
-        component: () => import('@/views/system/users_groups/index'),
+        path: 'users/groups',
+        component: () => import('@/views/system/users/groups/index'),
         name: 'USERS_GROUPS',
         meta: { title: '用户组' }
       },
       {
-        path: 'roles',
+        path: 'resources',
         component: () => import('@/views/system/roles/index'),
-        name: 'ROLES',
-        meta: { title: '角色管理' }
-      }
-    ]
-  },
-
-  {
-    path: 'external-link',
-    component: Layout,
-    children: [
+        name: 'RESOURCES',
+        meta: { title: '资源管理' }
+      },
       {
-        path: 'https://panjiachen.github.io/vue-element-admin-site/#/',
-        meta: { title: 'External Link', icon: 'link' }
+        path: 'resources/groups',
+        component: () => import('@/views/system/roles/index'),
+        name: 'RESOURCES_GROUPS',
+        meta: { title: '资源组管理' }
       }
     ]
   },

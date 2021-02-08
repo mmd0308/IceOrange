@@ -11,6 +11,8 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * @author 衡钊清
  * @classname SysUserController
@@ -20,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @Validated
 @RequestMapping(IceVersionConstants.REST_VERSION_V1 + "/users/groups")
-public class IceUserGroupController {
+public class SysUserGroupController {
 
     @DubboReference(version = IceVersionConstants.SERVER_VERSION_V10)
     private IceUserGroupService userGroupService;
@@ -37,8 +39,12 @@ public class IceUserGroupController {
     }
 
     @PostMapping
-    public void create(@RequestBody CreateUserGroupRequest request) {
+    public void create(@RequestBody @Valid CreateUserGroupRequest request) {
         userGroupService.create(request);
     }
 
+    @DeleteMapping("/{id}")
+    public void removeById(String id) {
+        userGroupService.removeById(new IDRequest(id));
+    }
 }

@@ -31,8 +31,8 @@
       </el-table-column>
       <el-table-column label="操作" align="center" width="160" class-name="small-padding fixed-width">
         <template slot-scope="{row}">
-          <el-button size="small" type="success" icon="el-icon-edit" @click="handleUpdate(row)"></el-button>
-          <el-button size="small" type="danger" icon="el-icon-delete" @click="handleDelete(row.id)"></el-button>
+          <el-button size="small" type="text"  @click="handleUpdate(row)">编辑</el-button>
+          <el-button size="small" type="text"  @click="handleDelete(row.id)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
@@ -49,6 +49,7 @@
 <script>
   import UserForm from './form/index'
   import {list, deleteById } from '@/api/common/index'
+import { debuglog } from 'util';
 
   export default {
     props: {},

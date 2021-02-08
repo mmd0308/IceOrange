@@ -33,9 +33,9 @@ export function update(moudle, params) {
   })
 }
 
-export function deleteById(path, id) {
+export function deleteById(moudle, id) {
   return request({
-    url: path + '/' + id,
+    url: bastPath + moudle + '/' + id,
     method: 'DELETE'
   })
 }

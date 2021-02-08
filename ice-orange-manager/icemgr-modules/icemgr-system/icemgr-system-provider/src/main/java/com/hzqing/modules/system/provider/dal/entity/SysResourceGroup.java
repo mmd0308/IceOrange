@@ -14,8 +14,8 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName(value = "ice_resource_group")
-public class IceResourceGroup extends BaseEntity {
+@TableName(value = "sys_resource_group")
+public class SysResourceGroup extends BaseEntity {
 
     private String name;
 

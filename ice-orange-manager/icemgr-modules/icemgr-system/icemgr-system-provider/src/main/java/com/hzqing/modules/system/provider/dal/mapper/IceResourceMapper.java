@@ -2,7 +2,7 @@ package com.hzqing.modules.system.provider.dal.mapper;
 
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hzqing.modules.system.provider.dal.entity.IceResource;
+import com.hzqing.modules.system.provider.dal.entity.SysResource;
 
 /**
  * @author 衡钊清
@@ -10,5 +10,5 @@ import com.hzqing.modules.system.provider.dal.entity.IceResource;
  * @Description 资源管理 数据层
  * @Date 2020/7/24 21:02
  */
-public interface IceResourceMapper extends BaseMapper<IceResource> {
+public interface IceResourceMapper extends BaseMapper<SysResource> {
 }
