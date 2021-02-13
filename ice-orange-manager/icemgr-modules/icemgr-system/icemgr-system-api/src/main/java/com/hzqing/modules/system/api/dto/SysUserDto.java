@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @date 2021/1/31 20:26
  **/
 @Data
-public class UserDto implements Serializable {
+public class SysUserDto implements Serializable {
 
     /**
      * 用户id

@@ -16,6 +16,12 @@ import lombok.ToString;
 public class CommonResponse<T> extends AbstractResponse {
 
     private static final long serialVersionUID = 8091884787659239002L;
+
+    /**
+     * 请求Id
+     */
+    private String requestId;
+
     /**
      * 响应的数据
      */

@@ -6,11 +6,12 @@
         <groupId>com.hzqing</groupId>
         <artifactId>icemgr-dependencies</artifactId>
         <version>1.0.0</version>
+        <relativePath>../../../icemgr-dependencies/pom.xml</relativePath>
     </parent>
 
     <groupId>com.hzqing.modules.system</groupId>
     <artifactId>icemgr-system-provider</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>icemgr-system-provider</name>
     <dependencies>
         <dependency>
@@ -90,13 +91,13 @@
         <!--        </dependency>-->
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

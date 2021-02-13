@@ -1,7 +1,7 @@
 package com.hzqing.modules.system.provider.converter;
 
 import com.hzqing.modules.system.api.dto.CreateUserRequest;
-import com.hzqing.modules.system.api.dto.UserDto;
+import com.hzqing.modules.system.api.dto.SysUserDto;
 import com.hzqing.modules.system.provider.dal.entity.SysUser;
 import org.mapstruct.Mapper;
 
@@ -15,9 +15,9 @@ import java.util.List;
 public interface ResourceConverter {
 
 
-    UserDto userToDto(SysUser sysUser);
+    SysUserDto userToDto(SysUser sysUser);
 
-    List<UserDto> listToListDto(List<SysUser> records);
+    List<SysUserDto> listToListDto(List<SysUser> records);
 
     SysUser requestToUser(CreateUserRequest request);
 }

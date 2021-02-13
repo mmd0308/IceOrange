@@ -5,19 +5,19 @@
     <parent>
         <artifactId>ice-orange-manager</artifactId>
         <groupId>com.hzqing</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.hzqing.common</groupId>
     <artifactId>icemgr-common</artifactId>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
-
     <modules>
         <module>icemgr-common-core</module>
         <module>icemgr-common-api</module>
         <module>icemgr-common-provider</module>
         <module>icemgr-common-rest</module>
     </modules>
-
-
 </project>

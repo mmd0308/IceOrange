@@ -3,9 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-        <module>icemgr-common</module>
-    </modules>
+
     <parent>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-build</artifactId>
@@ -15,7 +13,7 @@
 
 	<groupId>com.hzqing</groupId>
 	<artifactId>ice-orange-manager</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>ice-orange-manager</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -31,9 +29,14 @@
 		<spring-cloud-consul.version>2.2.4.RELEASE</spring-cloud-consul.version>
 		<spring-cloud-config.version>2.2.5.RELEASE</spring-cloud-config.version>
 		<spring-cloud-zookeeper.version>2.2.3.RELEASE</spring-cloud-zookeeper.version>
-
 	</properties>
-
+	<modules>
+		<module>icemgr-common</module>
+		<module>icemgr-auth</module>
+		<module>icemgr-rest</module>
+		<module>icemgr-gateway</module>
+		<module>icemgr-modules</module>
+	</modules>
 
 	<build>
 		<plugins>

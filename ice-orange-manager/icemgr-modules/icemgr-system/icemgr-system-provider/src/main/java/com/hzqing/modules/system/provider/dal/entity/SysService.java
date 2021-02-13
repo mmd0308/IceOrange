@@ -7,15 +7,15 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * @author 衡钊清
- * @Classname SysUsersGroups
- * @Description 用户组实体类
- * @Date 2021/1/31 08:34
- */
+ * 服务管理实体类
+ *
+ * @author hzqing
+ * @date 2021/2/13 上午9:28
+ **/
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName(value = "sys_resource_group")
-public class SysResourceGroup extends BaseEntity {
+@TableName(value = "sys_service")
+public class SysService extends BaseEntity {
 
     private String name;
 
@@ -23,4 +23,8 @@ public class SysResourceGroup extends BaseEntity {
     private String showName;
 
     private String remark;
+
+    private char status;
+
+    private String version;
 }

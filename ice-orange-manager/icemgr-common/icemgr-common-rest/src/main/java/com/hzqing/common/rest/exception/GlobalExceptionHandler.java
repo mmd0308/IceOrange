@@ -1,6 +1,7 @@
 package com.hzqing.common.rest.exception;
 
 import com.hzqing.common.rest.result.ErrorResult;
+import org.apache.dubbo.rpc.RpcException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -38,6 +39,17 @@ public class GlobalExceptionHandler {
         ErrorResult result = new ErrorResult("405", e.getMessage());
         return result;
     }
+
+
+    @ExceptionHandler(value = RpcException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseBody
+    public ErrorResult errorHandler(HttpServletRequest request, RpcException e, HttpServletResponse response) {
+        ErrorResult result = new ErrorResult("500", "当前服务不可用，请稍后重试.");
+        return result;
+    }
+
+
 
     @ExceptionHandler(value = Exception.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

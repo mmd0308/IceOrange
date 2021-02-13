@@ -1,4 +1,4 @@
-package com.hzqing.common.provider.entity;
+package com.hzqing.common.provider.dal.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

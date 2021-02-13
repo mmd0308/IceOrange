@@ -60,15 +60,15 @@ export const constantRoutes = [
     path: '/app',
     component: Layout,
     meta: {
-      title: '应用管理',
+      title: '服务管理',
       icon: 'nested'
     },
     children: [
       {
         path: 'index',
         name: 'Project',
-        component: () => import('@/views/project/Index'),
-        meta: { title: '应用管理', icon: 'form' }
+        component: () => import('@/views/system/service/service/index'),
+        meta: { title: '服务管理', icon: 'form' }
       },      
       {
         path: 'groups',

@@ -8,14 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="icemgr-system-provider" />
         <module name="icemgr-common-provider" />
-        <module name="icemgr-modules" />
         <module name="icemgr-gateway" />
         <module name="icemgr-system-api" />
         <module name="icemgr-common-core" />
-        <module name="icemgr-common-api" />
+        <module name="icemgr-auth" />
         <module name="icemgr-rest" />
         <module name="icemgr-common-rest" />
-        <module name="icemgr-auth" />
+        <module name="icemgr-common-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +29,7 @@
       <module name="icemgr-gateway" target="11" />
       <module name="icemgr-modules" target="11" />
       <module name="icemgr-rest" target="11" />
-      <module name="icemgr-system" target="1.5" />
+      <module name="icemgr-system" target="11" />
       <module name="icemgr-system-api" target="11" />
       <module name="icemgr-system-provider" target="11" />
     </bytecodeTargetLevel>

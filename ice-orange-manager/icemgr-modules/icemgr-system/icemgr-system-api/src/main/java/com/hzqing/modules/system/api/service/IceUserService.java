@@ -3,8 +3,8 @@ package com.hzqing.modules.system.api.service;
 import com.hzqing.common.api.request.IDRequest;
 import com.hzqing.common.api.response.IcePageResponse;
 import com.hzqing.modules.system.api.dto.CreateUserRequest;
+import com.hzqing.modules.system.api.dto.SysUserDto;
 import com.hzqing.modules.system.api.dto.UpdateUserRequest;
-import com.hzqing.modules.system.api.dto.UserDto;
 import com.hzqing.modules.system.api.dto.UserListRequest;
 
 /**
@@ -17,9 +17,9 @@ public interface IceUserService {
 
     void create(CreateUserRequest request);
 
-    UserDto getById(IDRequest request);
+    SysUserDto getById(IDRequest request);
 
-    IcePageResponse<UserDto> list(UserListRequest request);
+    IcePageResponse<SysUserDto> list(UserListRequest request);
 
     void removeById(IDRequest request);
 

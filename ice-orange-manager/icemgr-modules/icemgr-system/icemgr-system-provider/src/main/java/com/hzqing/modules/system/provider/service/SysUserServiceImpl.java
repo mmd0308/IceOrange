@@ -5,9 +5,10 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hzqing.common.api.request.IDRequest;
 import com.hzqing.common.api.response.IcePageResponse;
+import com.hzqing.common.core.constants.IceVersionConstants;
 import com.hzqing.modules.system.api.dto.CreateUserRequest;
+import com.hzqing.modules.system.api.dto.SysUserDto;
 import com.hzqing.modules.system.api.dto.UpdateUserRequest;
-import com.hzqing.modules.system.api.dto.UserDto;
 import com.hzqing.modules.system.api.dto.UserListRequest;
 import com.hzqing.modules.system.api.service.IceUserService;
 import com.hzqing.modules.system.provider.converter.UserConverter;
@@ -24,7 +25,7 @@ import java.util.List;
  * @Description 用户管理 业务实现
  * @Date 2020/7/22 20:40
  */
-@DubboService
+@DubboService(version = IceVersionConstants.SERVER_VERSION_V10)
 public class SysUserServiceImpl implements IceUserService {
 
     @Autowired
@@ -41,15 +42,15 @@ public class SysUserServiceImpl implements IceUserService {
     }
 
     @Override
-    public UserDto getById(IDRequest request) {
+    public SysUserDto getById(IDRequest request) {
         request.checkParams();
         SysUser sysUser = userMapper.selectById(request.getId());
         return userConverter.userToDto(sysUser);
     }
 
     @Override
-    public IcePageResponse<UserDto> list(UserListRequest request) {
-        IcePageResponse<UserDto> response = new IcePageResponse<>();
+    public IcePageResponse<SysUserDto> list(UserListRequest request) {
+        IcePageResponse<SysUserDto> response = new IcePageResponse<>();
         try {
             PageHelper.startPage(request.getPageNum(), request.getPageSize());
             List<SysUser> list = userMapper.selectList(new QueryWrapper<>(new SysUser()));

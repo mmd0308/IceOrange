@@ -7,6 +7,7 @@
         <groupId>com.hzqing</groupId>
         <artifactId>icemgr-dependencies</artifactId>
         <version>1.0.0</version>
+        <relativePath>../../icemgr-dependencies/pom.xml</relativePath>
     </parent>
 
     <groupId>com.hzqing.common</groupId>
