@@ -6,9 +6,6 @@
     <groupId>com.hzqing.dependencies</groupId>
     <artifactId>ice-orange-dependencies</artifactId>
     <version>2021.9.0</version>
-    <modules>
-        <module>../ice-orange-modules</module>
-    </modules>
     <name>ice-orange-dependencies</name>
     <packaging>pom</packaging>
 
