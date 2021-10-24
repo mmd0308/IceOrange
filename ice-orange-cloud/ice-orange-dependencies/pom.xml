@@ -17,6 +17,8 @@
         <spring.alibaba.version>2021.1</spring.alibaba.version>
 
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+        <org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
     </properties>
 
     <dependencyManagement>
