@@ -159,3 +159,21 @@ create table sys_config (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='参数配置表';
 
+-- ----------------------------
+-- 菜单管理表
+-- ----------------------------
+USE ice_orange_modules_system;
+drop table if exists sys_menu;
+create table sys_menu (
+    `id`                    varchar(32)         NOT NULL                    COMMENT '表的主键',
+    `name`                  varchar(100)        DEFAULT ''                  COMMENT '菜单名称',
+    `path`                  varchar(256)        DEFAULT ''                  COMMENT '菜单路径',
+    `icon`                  varchar(64)         DEFAULT ''                  COMMENT '菜单图标',
+    `component`             varchar(256)        DEFAULT ''                  COMMENT '组件路径',
+    `remark`                varchar(256)        DEFAULT NULL                COMMENT '备注',
+    `created_by`            varchar(45)         DEFAULT NULL                COMMENT '创建人',
+    `created_at`            bigint(20)          DEFAULT NULL                COMMENT '创建时间',
+    `updated_by`            varchar(45)         DEFAULT NULL                COMMENT '更新人',
+    `updated_at`            bigint(20)          DEFAULT NULL                COMMENT '更新时间',
+     PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='菜单管理表';
