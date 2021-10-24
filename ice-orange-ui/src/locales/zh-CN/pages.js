@@ -64,4 +64,18 @@ export default {
   'pages.searchTable.tenThousand': '万',
   'pages.searchTable.batchDeletion': '批量删除',
   'pages.searchTable.batchApproval': '批量审批',
+
+  'pages.common.add': '新增',
+  'pages.common.edit': '编辑',
+  'pages.common.delete': '删除',
+  'pages.common.batchDelete': '批量删除',
+  'pages.modules.common.table.column.operation': '操作',
+  'pages.modules.common.table.column.createAt': '创建时间',
+  'pages.modules.common.table.column.updateAt': '更新时间',
+
+  'pages.modules.role.table.column.name': '角色名称',
+  'pages.modules.role.table.column.permission': '权限编码',
+  'pages.modules.role.table.column.status': '角色状态',
+  'pages.modules.role.table.column.type': '角色类型',
+  'pages.modules.role.table.column.remark': '备注',
 };

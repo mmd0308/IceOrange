@@ -104,12 +104,11 @@ const TableList = () => {
     {
       title: (
         <FormattedMessage
-          id="pages.searchTable.updateForm.ruleName.nameLabel"
-          defaultMessage="Rule name"
+          id="pages.modules.role.table.column.name"
+          defaultMessage="角色名称"
         />
       ),
       dataIndex: 'name',
-      tip: 'The rule name is the unique key',
       render: (dom, entity) => {
         return (
           <a
@@ -124,15 +123,15 @@ const TableList = () => {
       },
     },
     {
-      title: <FormattedMessage id="角色列表" defaultMessage="Description" />,
+      title: <FormattedMessage id="pages.modules.role.table.column.permission" defaultMessage="权限编码" />,
       dataIndex: 'desc',
       valueType: 'textarea',
     },
     {
       title: (
         <FormattedMessage
-          id="pages.searchTable.titleCallNo"
-          defaultMessage="Number of service calls"
+          id="pages.modules.role.table.column.status"
+          defaultMessage="角色状态"
         />
       ),
       dataIndex: 'callNo',
@@ -145,7 +144,7 @@ const TableList = () => {
         })}`,
     },
     {
-      title: <FormattedMessage id="pages.searchTable.titleStatus" defaultMessage="Status" />,
+      title: <FormattedMessage id="pages.modules.role.table.column.type" defaultMessage="角色类型" />,
       dataIndex: 'status',
       hideInForm: true,
       valueEnum: {
@@ -184,7 +183,7 @@ const TableList = () => {
     {
       title: (
         <FormattedMessage
-          id="pages.searchTable.titleUpdatedAt"
+          id="pages.modules.common.table.column.updateAt"
           defaultMessage="Last scheduled time"
         />
       ),
@@ -214,7 +213,39 @@ const TableList = () => {
       },
     },
     {
-      title: <FormattedMessage id="pages.searchTable.titleOption" defaultMessage="Operating" />,
+      title: (
+        <FormattedMessage
+          id="pages.modules.role.table.column.remark"
+          defaultMessage="Last scheduled time"
+        />
+      ),
+      sorter: true,
+      dataIndex: 'updatedAt',
+      valueType: 'dateTime',
+      renderFormItem: (item, { defaultRender, ...rest }, form) => {
+        const status = form.getFieldValue('status');
+
+        if (`${status}` === '0') {
+          return false;
+        }
+
+        if (`${status}` === '3') {
+          return (
+            <Input
+              {...rest}
+              placeholder={intl.formatMessage({
+                id: 'pages.searchTable.exception',
+                defaultMessage: 'Please enter the reason for the exception!',
+              })}
+            />
+          );
+        }
+
+        return defaultRender(item);
+      },
+    },
+    {
+      title: <FormattedMessage id="pages.modules.common.table.column.operation" defaultMessage="Operating" />,
       dataIndex: 'option',
       valueType: 'option',
       render: (_, record) => [
@@ -225,14 +256,7 @@ const TableList = () => {
             setCurrentRow(record);
           }}
         >
-          角色
-          <FormattedMessage id="pages.searchTable.config" defaultMessage="Configuration" />
-        </a>,
-        <a key="subscribeAlert" href="https://procomponents.ant.design/">
-          <FormattedMessage
-            id="pages.searchTable.subscribeAlert"
-            defaultMessage="Subscribe to alerts"
-          />
+          <FormattedMessage id="pages.common.edit" defaultMessage="Configuration" />
         </a>,
       ],
     },
@@ -257,7 +281,8 @@ const TableList = () => {
               handleModalVisible(true);
             }}
           >
-            <PlusOutlined /> <FormattedMessage id="pages.searchTable.new" defaultMessage="New" />
+            <PlusOutlined />
+            <FormattedMessage id="pages.common.add" defaultMessage="新增" />
           </Button>,
         ]}
         request={rule}
@@ -313,9 +338,10 @@ const TableList = () => {
           </Button>
         </FooterToolbar>
       )}
+
       <ModalForm
         title={intl.formatMessage({
-          id: 'pages.searchTable.createForm.newRule',
+          id: 'pages.common.add',
           defaultMessage: 'New rule',
         })}
         width="400px"
@@ -326,7 +352,6 @@ const TableList = () => {
 
           if (success) {
             handleModalVisible(false);
-
             if (actionRef.current) {
               actionRef.current.reload();
             }
@@ -347,9 +372,12 @@ const TableList = () => {
           ]}
           width="md"
           name="name"
+          label="ldldl"
         />
-        <ProFormTextArea width="md" name="desc" />
+        <ProFormTextArea width="md" name="测试" />
       </ModalForm>
+
+      {/*更新  */}
       <UpdateForm
         onSubmit={async (value) => {
           const success = await handleUpdate(value);
