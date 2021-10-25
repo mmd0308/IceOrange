@@ -2,6 +2,7 @@ package com.hzqing.modules.system.business.role.dal.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hzqing.modules.system.business.role.dal.entity.SysRole;
+import com.hzqing.modules.system.business.role.dto.SysRoleDto;
 
 /**
  * @author 衡钊清

@@ -16,6 +16,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.hzqing.common.core</groupId>
+            <artifactId>ice-orange-common-core</artifactId>
+            <version>2021.9.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>

@@ -47,25 +47,25 @@ public class SysRole implements Serializable {
     /**
      * 创建者账号
      */
-    @TableField("create_by")
-    private String createBy;
+    @TableField("created_by")
+    private String createdBy;
 
     /**
      * 创建时间
      */
-    @TableField("create_time")
-    private LocalDateTime createTime;
+    @TableField("created_at")
+    private LocalDateTime createdAt;
 
     /**
      * 更新者账号
      */
-    @TableField("update_by")
-    private String updateBy;
+    @TableField("updated_by")
+    private String updatedBy;
 
     /**
      * 更新时间
      */
-    @TableField("update_time")
-    private LocalDateTime updateTime;
+    @TableField("updated_at")
+    private LocalDateTime updatedAt;
 
 }
