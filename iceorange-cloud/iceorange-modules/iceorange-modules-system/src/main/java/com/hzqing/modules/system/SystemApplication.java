@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.hzqing.modules.system.business.*.mapper")
-public class Application {
+public class SystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(SystemApplication.class, args);
     }
 
 }
